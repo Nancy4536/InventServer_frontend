@@ -16,7 +16,11 @@
 }
 
 #brand {
-  margin-left: 120px;
+  margin-left: 20px; 
+}
+
+.bran-logo{
+  margin-left: 100px;
 }
 
 .footer {
