@@ -1,14 +1,13 @@
 import React from "react";
-import logo from "../../img/InventServ.png"
+import logo from "../../img/InventServ.png";
 
 const Navbar = () => {
   const token = localStorage.getItem("token");
-  console.log(token)
+  console.log(token);
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <img src={logo} alt="" width="50px" className="bran-logo"/>
-        <a id='brand' className="navbar-brand" href="/">
+        <a id="brand" className="navbar-brand" href="/">
           InvenServer
         </a>
         <button
@@ -22,10 +21,10 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
+              <a className="nav-link active" aria-current="page" href="/login">
                 Inicio
               </a>
             </li>
@@ -34,11 +33,13 @@ const Navbar = () => {
                 Registro
               </a>
             </li>
-            {token !== null? <li className="nav-item">
-              <a className="nav-link" href="/productos">
-                Productos
-              </a>
-            </li> : null}
+            {token !== null ? (
+              <li className="nav-item">
+                <a className="nav-link" href="/productos">
+                  Productos
+                </a>
+              </li>
+            ) : null}
           </ul>
         </div>
       </div>
