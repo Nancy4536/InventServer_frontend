@@ -1,38 +1,30 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import AuthContext from "../../context/autenticacion/authContext";
 import logo from "../../img/InventServ.png";
 
 const Navbar = () => {
+  // Extraer los valores de AuthContext.js
+  const authContext = useContext(AuthContext);
+  const { usuarioAutenticado, cerrarSesion } = authContext;
   const token = localStorage.getItem("token");
-  console.log(token);
+
+  useEffect(() => {
+    usuarioAutenticado();
+
+    // eslint-disable-next-line
+  }, []);
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container-fluid">
-        <a id="brand" className="navbar-brand" href="/">
-          InvenServer
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/login">
-                Inicio
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/registro">
-                Registro
-              </a>
-            </li>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark text-dark">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a id="brand" className="navbar-brand" href="/">
+              InvenServer
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
             {token !== null ? (
               <li className="nav-item">
                 <a className="nav-link" href="/productos">
@@ -40,8 +32,39 @@ const Navbar = () => {
                 </a>
               </li>
             ) : null}
-          </ul>
-        </div>
+          </li>
+          <li class="nav-item">
+            {token !== null ? (
+              <li className="nav-item">
+                <a
+                  href="/"
+                  className="nav-link "
+                  onClick={() => cerrarSesion()}
+                >
+                  Log Out
+                </a>
+              </li>
+            ) : null}
+          </li>
+          <li className="nav-item">
+            {token == null ? (
+              <li className="nav-item">
+                <a className="nav-link " href="/registro">
+                  Registro
+                </a>
+              </li>
+            ) : null}
+          </li>
+          <li className="nav-item">
+            {token == null ? (
+              <li className="nav-item">
+                <a className="nav-link" href="/Login">
+                  Login
+                </a>
+              </li>
+            ) : null}
+          </li>
+        </ul>
       </div>
     </nav>
   );
