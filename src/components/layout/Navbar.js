@@ -18,7 +18,7 @@ const Navbar = () => {
         <ul class="navbar-nav">
           <li class="nav-item">
             <a id="brand" className="navbar-brand" href="/">
-              InvenServer
+              InventServer
             </a>
           </li>
         </ul>
