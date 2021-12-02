@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from "react";
 import AuthContext from "../../context/autenticacion/authContext";
-import logo from "../../img/InventServ.png";
 
 const Navbar = () => {
   // Extraer los valores de AuthContext.js
