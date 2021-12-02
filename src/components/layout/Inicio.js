@@ -12,10 +12,6 @@ const inicio = (props) => {
       <div class="container mt-5">
         <div class="row">
           <div class="col-sm-4">
-            <h2>Contactenos</h2>
-            <p>puedes comunicarte a nuestros lineas de servicio</p>
-            <p>cel:+573001234567 email:</p>
-            <p>email:recursos@inventser.com</p>
             <h3 class="mt-4">Inicia tu prueba</h3>
             <p></p>
             <ul class="nav nav-pills flex-column">

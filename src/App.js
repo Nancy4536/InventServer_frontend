@@ -4,6 +4,7 @@ import Login from "./components/auth/Login";
 import Inicio from "./components/layout/Inicio";
 import Registro from "./components/auth/Registro";
 import Productos from "./components/productos/Productos";
+import Contact from "./components/layout/Contact";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import AlertaState from "./context/alertas/AlertaState";
@@ -29,6 +30,7 @@ function App() {
               <Route exact path="/" component={Inicio} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/registro" component={Registro} />
+              <Route exact path="/contact" component={Contact} />
               <RutaPrivada exact path="/productos" component={Productos} />
             </Switch>
             <Footer></Footer>
