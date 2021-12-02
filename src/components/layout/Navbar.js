@@ -13,7 +13,7 @@ const Navbar = () => {
     // eslint-disable-next-line
   }, []);
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark text-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary text-dark">
       <div class="container-fluid">
         <ul class="navbar-nav">
           <li class="nav-item">
